@@ -56,7 +56,7 @@ module Uploader
 
       def render_json(hash_or_object, status = 200)
         self.status = status
-        self.content_type = Uploader.content_type(env["HTTP_USER_AGENT"])
+        self.content_type = Uploader.content_type(request.env["HTTP_USER_AGENT"])
         self.response_body = hash_or_object.to_json(:root => false)
       end
 
